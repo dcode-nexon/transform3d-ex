@@ -26,14 +26,17 @@ body {
 		width: 400px;
 		height: 400px;
 		position: relative;
+		transition: 0.5s;
 		//모션을 주더라도 자식요소의 3d효과를 유지시킴
 		transform-style: preserve-3d;
-		animation: ani 6s linear infinite;
-		animation-play-state: running;
+		//animation: ani 6s linear infinite;
+		//animation-play-state: running;
 
+		/*
 		&:hover {
 			animation-play-state: paused;
 		}
+    */
 
 		article {
 			width: 100%;
@@ -73,6 +76,40 @@ body {
 				transform: rotateX(270deg) translateZ(200px);
 			}
 		}
+
+		&.face1 {
+			transform: rotateX(0deg) rotateY(0deg);
+		}
+		&.face2 {
+			transform: rotateX(0deg) rotateY(-90deg);
+		}
+		&.face3 {
+			transform: rotateX(0deg) rotateY(-180deg);
+		}
+		&.face4 {
+			transform: rotateX(0deg) rotateY(-270deg);
+		}
+		&.face5 {
+			transform: rotateX(-90deg) rotateY(0deg);
+		}
+		&.face6 {
+			transform: rotateX(-270deg) rotateY(0deg);
+		}
+	}
+}
+
+ul {
+	position: absolute;
+	top: 50px;
+	left: 100px;
+	display: flex;
+	gap: 30px;
+	font-size: 20px;
+	cursor: pointer;
+
+	li.on {
+		color: cornflowerblue;
+		font-weight: bold;
 	}
 }
 

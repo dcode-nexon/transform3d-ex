@@ -24,12 +24,13 @@ body #wrap {
   width: 400px;
   height: 400px;
   position: relative;
+  transition: 0.5s;
   transform-style: preserve-3d;
-  animation: ani 6s linear infinite;
-  animation-play-state: running;
-}
-body #wrap:hover {
-  animation-play-state: paused;
+  /*
+  &:hover {
+  	animation-play-state: paused;
+  }
+    */
 }
 body #wrap article {
   width: 100%;
@@ -67,6 +68,38 @@ body #wrap article:nth-of-type(5) {
 body #wrap article:nth-of-type(6) {
   background: blueviolet;
   transform: rotateX(270deg) translateZ(200px);
+}
+body #wrap.face1 {
+  transform: rotateX(0deg) rotateY(0deg);
+}
+body #wrap.face2 {
+  transform: rotateX(0deg) rotateY(-90deg);
+}
+body #wrap.face3 {
+  transform: rotateX(0deg) rotateY(-180deg);
+}
+body #wrap.face4 {
+  transform: rotateX(0deg) rotateY(-270deg);
+}
+body #wrap.face5 {
+  transform: rotateX(-90deg) rotateY(0deg);
+}
+body #wrap.face6 {
+  transform: rotateX(-270deg) rotateY(0deg);
+}
+
+ul {
+  position: absolute;
+  top: 50px;
+  left: 100px;
+  display: flex;
+  gap: 30px;
+  font-size: 20px;
+  cursor: pointer;
+}
+ul li.on {
+  color: cornflowerblue;
+  font-weight: bold;
 }
 
 @keyframes ani {
