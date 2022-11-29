@@ -18,12 +18,18 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  perspective: 800px;
 }
 body #wrap {
   width: 400px;
   height: 400px;
-  border: 1px solid #000;
   position: relative;
+  transform-style: preserve-3d;
+  animation: ani 6s linear infinite;
+  animation-play-state: running;
+}
+body #wrap:hover {
+  animation-play-state: paused;
 }
 body #wrap article {
   width: 100%;
@@ -40,21 +46,36 @@ body #wrap article {
 }
 body #wrap article:nth-of-type(1) {
   background: blue;
+  transform: rotateY(0deg) translateZ(200px);
 }
 body #wrap article:nth-of-type(2) {
   background: red;
+  transform: rotateY(90deg) translateZ(200px);
 }
 body #wrap article:nth-of-type(3) {
   background: green;
+  transform: rotateY(180deg) translateZ(200px);
 }
 body #wrap article:nth-of-type(4) {
   background: violet;
+  transform: rotateY(270deg) translateZ(200px);
 }
 body #wrap article:nth-of-type(5) {
   background: purple;
+  transform: rotateX(90deg) translateZ(200px);
 }
 body #wrap article:nth-of-type(6) {
   background: blueviolet;
+  transform: rotateX(270deg) translateZ(200px);
+}
+
+@keyframes ani {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+  100% {
+    transform: rotateX(360deg) rotateY(360deg);
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
